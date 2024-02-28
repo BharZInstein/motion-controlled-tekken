@@ -17,7 +17,7 @@ with thepose.Pose(min_detection_confidence=0.5,min_tracking_confidence=0.5) as p
         image.flags.writeable=True
         image=cv2.cvtColor(image,cv2.COLOR_RGB2BGR)
         mp_drawing.draw_landmarks(image,results.pose_landmarks,thepose.POSE_CONNECTIONS,mp_drawing.DrawingSpec(color=(0,0,255),thickness=3,circle_radius=2),
-                                  mp_drawing.DrawingSpec(color=(255,0,0),thickness=3,circle_radius=2))
+        mp_drawing.DrawingSpec(color=(255,0,0),thickness=3,circle_radius=2))
         if not ret:
             continue
 
