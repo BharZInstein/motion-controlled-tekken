@@ -1,3 +1,5 @@
+# Credits: https://github.com/malraharsh
+
 import ctypes
 import time
 
@@ -8,6 +10,7 @@ W = 0x11
 A = 0x1E
 S = 0x1F
 D = 0x20
+
 
 #http://www.philipstorr.id.au/pcbook/book3/scancode.htm
 # http://www.scs.stanford.edu/10wi-cs140/pintos/specs/kbd/scancodes-1.html
