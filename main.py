@@ -1,7 +1,8 @@
 import cv2
 import mediapipe as mp
 import numpy as np
-import keyboard
+import directkeys
+import time
 
 mp_drawing = mp.solutions.drawing_utils
 thepose = mp.solutions.pose
@@ -54,10 +55,12 @@ with thepose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
       p14 = poser_landmarks.landmark[14]
       p16 = poser_landmarks.landmark[16]
       angle = angle_calc(p12, p14, p16)
-    
+
     if 148<angle and angle<166:
-              keyboard.press_and_release("a")
-              
+              directkeys.PressKey(0x1E)
+              time.sleep(0.5)
+              directkeys.ReleaseKey(0x1E)
+              time.sleep(0.5)
           
     
     if cv2.waitKey(1) == ord('p'):
@@ -66,5 +69,4 @@ with thepose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
 cap.release()
 cv2.destroyAllWindows()
 
-
-
+#aaaaaa
