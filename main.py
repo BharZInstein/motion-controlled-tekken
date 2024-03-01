@@ -55,12 +55,21 @@ with thepose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
       p14 = poser_landmarks.landmark[14]
       p16 = poser_landmarks.landmark[16]
       angle = angle_calc(p12, p14, p16)
+      p24=poser_landmarks.landmark[24]
+      p26=poser_landmarks.landmark[26]
+      p28=poser_landmarks.landmark[28]
+      anglel=angle_calc(p24,p26,p28)
 
     if 148<angle and angle<166:
               directkeys.PressKey(0x1E)
               time.sleep(0.5)
               directkeys.ReleaseKey(0x1E)
               time.sleep(0.5)
+    if 40<angle and angle<90:
+       directkeys.PressKey(0x88)
+       time.sleep(0.5)
+       directkeys.ReleaseKey(0x88)
+       time.sleep(0.5)
           
     
     if cv2.waitKey(1) == ord('p'):
@@ -68,5 +77,3 @@ with thepose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
 
 cap.release()
 cv2.destroyAllWindows()
-
-#aaaaaa
